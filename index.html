@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="SiteJVAZ.css" />
+
+  <!-- Adicione Font Awesome para o ícone WhatsApp -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+
+  <title>Lava Jato Vaz e Santos</title>
+
+  <style>
+    /* Seu CSS aqui, mantido igual */
+    body {
+      background-image: url('Logofundo.jpg');
+      background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contato,
+    .funcionamento {
+      display: none;
+      margin-top: 15px;
+      padding: 10px 15px 10px 80px;
+      border-radius: 5px;
+      max-width: 450px;
+      background-color: #000000cc;
+      color: #ffffff;
+      border: 1px solid #333333;
+      position: relative;
+      overflow: visible;
+    }
+
+    button {
+      cursor: pointer;
+      margin-right: 8px;
+      padding: 1px 3px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .carrinho {
+      position: absolute;
+      top: 50%;
+      left: -100px;
+      width: 60px;
+      transform: translateY(-50%);
+      transition: left 0.5s ease;
+      pointer-events: none;
+      filter: drop-shadow(0 0 5px #ff0000);
+    }
+
+    .contato.mostrar .carrinho {
+      left: 10px;
+    }
+
+    .contato a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Media Query para dispositivos móveis */
+    @media (max-width: 600px) {
+      .contato,
+      .funcionamento {
+        padding: 15px;
+        max-width: 100%;
+        font-size: 13px;
+      }
+
+      .carrinho {
+        display: none; /* Esconde o carrinho para não sobrepor */
+      }
+
+    
+
+      button {
+        display: block;
+        width: 50%; /* Garante que o botão ocupe 100% da largura */
+        margin-bottom: 10px; /* Espaçamento entre os botões */
+      }
+    }
+  </style>
+</head>
+
+<div class="LogoJvaz">
+    <h2>Lava Jato <span class="textosologo"> Vaz e Santos </span></h2>
+    
+    <p>Precisa lavar sua moto, carro, com confiança. Vem para o Lava Jato Vaz e Santos!</p>
+
+    <div class="botoes">
+        <button id="btnContato">Contato</button>
+        <button id="btnHorario">Horário de funcionamento</button>
+    </div>
+</div>
+<div >
+    <p class="endereco">Visite-nos em:</p>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6327972639563!2d-38.45891808476387!3d-6.045034796021065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7bb4d00611804eb%3A0x8e70d065083b7072!2sLava%20jato%20Vaz%20e%20Santos!5e0!3m2!1spt-BR!2sbr!4v1700824866595!5m2!1spt-BR!2sbr"></iframe>
+    
+</div>
+
+<div class="rodape">
+    <p>© 2024 Lava Jato Vaz e Santos. <br> Todos os direitos reservados.</p>
+</div>
+
+      <div id="contato" class="contato">
+        <img src="images junto com a logo(1).jpg" alt="Carrinho" class="carrinho" />
+        <p>
+          Custodio Vaz!<br />
+          <a href="https://wa.me/5588981051989" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>(88) 98105-1989
+          </a><br />
+          Joaquim Santos<br />
+          <a href="https://wa.me/5588998649041" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>(88) 99864-9041
+          </a>
+        </p>
+      </div>
+
+      <div id="horario" class="funcionamento">
+        <p><i class="fas fa-clock" style="color: white; font-size: 30px; margin-right: 8px;"></i>
+          Seg à Sáb - Das 08:00hs às 17:00hs
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const btnContato = document.getElementById("btnContato");
+      const divContato = document.getElementById("contato");
+
+      const btnHorario = document.getElementById("btnHorario");
+      const divHorario = document.getElementById("horario");
+
+      btnContato.addEventListener("click", function () {
+        // Quando clicar em contato, mostra contato e esconde horário
+        divContato.style.display = "block";
+        divHorario.style.display = "none";
+        divContato.classList.add("mostrar");
+      });
+
+      btnHorario.addEventListener("click", function () {
+        // Quando clicar em horário, mostra horário e esconde contato
+        divHorario.style.display = "block";
+        divContato.style.display = "none";
+        divContato.classList.remove("mostrar");
+      });
+    });
+  </script>
+</body>
+
+</html>
